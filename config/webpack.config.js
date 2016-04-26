@@ -8,15 +8,15 @@ module.exports = {
     devtool: 'source-map',
     module: {
         loaders: [{
-            test: /\.jsx$/,
-            loader: 'jsx-loader?insertPragma=React.DOM'
-        }, {
             test: /\.css$/,
             loader: 'style!css'
         }, {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: 'babel'
+            loader: 'babel',
+            query: {
+                presets: ['es2015', 'react']
+            }
         }, {
             test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
             loader: 'file-loader'

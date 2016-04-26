@@ -2,7 +2,10 @@ import React from 'react';
 
 const App = React.createClass({
     render() {
-        return <div>Hello world!</div>;
+        console.log('hi');
+        return (
+            <div>Hello world!</div>
+        );
     }
 });
 
