@@ -8,3 +8,5 @@ export default function launch() {
         document.getElementById('container')
     );
 }
+
+launch();

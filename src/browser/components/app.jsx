@@ -4,7 +4,7 @@ const App = React.createClass({
     render() {
         console.log('hi');
         return (
-            <div>Hello world!</div>
+            <div>Hello!</div>
         );
     }
 });
