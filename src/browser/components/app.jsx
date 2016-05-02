@@ -31,7 +31,7 @@ const App = React.createClass({
         return (
             <div className="main">
                 <div className="restaurant">
-                    <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                    <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
                         {this.renderPickedRestaurant()}
                     </ReactCSSTransitionGroup>
                     <button className="main-button" onClick={this.pickNewRestaurant}>BARREL ROLL!</button>
