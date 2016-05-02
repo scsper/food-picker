@@ -1,19 +1,10 @@
 import React from 'react';
+import List from '../lists/Intuit_list';
 
 const App = React.createClass({
     getInitialState() {
         return {
-            restaurants: [{
-                id: 1,
-                name: 'Banana Leaf'
-            }, {
-                id: 2,
-                name: 'A Slice of New York'
-            }, {
-                id: 3,
-                name: 'Adamson\'s French Dip'
-            }],
-
+            restaurants: List,
             pickedRestaurant: null
         };
     },
@@ -37,9 +28,11 @@ const App = React.createClass({
 
     render() {
         return (
-            <div>
-                {this.renderPickedRestaurant()}
-                <button onClick={this.pickNewRestaurant}>Pick a new restaurant</button>
+            <div className="main">
+                <div className="restaurant">
+                    {this.renderPickedRestaurant()}
+                    <button className="main-button" onClick={this.pickNewRestaurant}>Pick!</button>
+                </div>
             </div>
         );
     }

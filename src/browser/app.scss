@@ -1,0 +1,50 @@
+$main-button-color: #00B6E3;
+$main-font : 'Roboto', sans-serif;
+$dark-purple : #291E40;
+$light-purple : #766f84;
+$white : #FFFFFF;
+$light-green : #9AEDB5;
+$light-pink : #ED7D86;
+
+
+.main {
+    display: flex;
+    height: 500px;
+    background: rgba(237,125,134, .35);
+    border-radius: 5px;
+
+    justify-content: center;
+    align-items: center;
+    color: #555555;
+}
+
+.main, .main-button, .restaurant{
+    font-family: $main-font;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.restaurant{
+    text-align: center;
+    min-width: 200px;
+    background: $white;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.main-button{
+    padding: 1em;
+    margin: 1em;
+    background: $light-purple;
+    border: none;
+    border-radius: 1em;
+
+    &:active{
+        border: 2px solid $dark-purple;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
