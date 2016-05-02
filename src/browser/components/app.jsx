@@ -1,5 +1,6 @@
 import React from 'react';
 import List from '../lists/Intuit_list';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const App = React.createClass({
     getInitialState() {
@@ -23,15 +24,17 @@ const App = React.createClass({
         const key = pickedRestaurant ? pickedRestaurant.id : -1;
         const text = pickedRestaurant ? pickedRestaurant.name : 'No restaurant picked.';
 
-        return <div key={key}>{text}</div>;
+        return <p key={key}>{text}</p>;
     },
 
     render() {
         return (
             <div className="main">
                 <div className="restaurant">
-                    {this.renderPickedRestaurant()}
-                    <button className="main-button" onClick={this.pickNewRestaurant}>Pick!</button>
+                    <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                        {this.renderPickedRestaurant()}
+                    </ReactCSSTransitionGroup>
+                    <button className="main-button" onClick={this.pickNewRestaurant}>BARREL ROLL!</button>
                 </div>
             </div>
         );

@@ -36,7 +36,9 @@ $light-pink : #ED7D86;
     margin: 1em;
     background: $light-purple;
     border: none;
-    border-radius: 1em;
+    border-radius: 5px;
+    color: white;
+    position: relative;
 
     &:active{
         border: 2px solid $dark-purple;
@@ -45,6 +47,31 @@ $light-pink : #ED7D86;
     &:focus {
         outline: none;
     }
+}
+
+.example-enter {
+    opacity: 0.01;
+    top: -1em;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    top: 0em;
+    transition: top 500ms ease-in;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+    top: 0em;
+}
+
+.example-leave.example-leave-active {
+    top: 1em;
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+    transition: top 300ms ease-in;
+
 }
 
 
