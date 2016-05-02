@@ -9,7 +9,7 @@ $ gulp
 
 Visit <http://localhost:3000/>.
 
-Yes, all the dev dependencies are in package.json's dependencies.  This is to make it easy to deploy to Heroku.  It's a side project ¯\_(ツ)_/¯.
+Yes, all the dev dependencies are in package.json's dependencies.  This is to make it easy to deploy to Heroku.  It's a side project `¯\_(ツ)_/¯`.
 
 ### Deploy
 
