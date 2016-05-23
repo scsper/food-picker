@@ -1,11 +1,14 @@
 import React from 'react';
-import List from '../lists/Intuit_list';
+import Result from './result.jsx';
+import Filters from './FilterList.jsx';
+
+import RestaurantList from '../lists/Intuit_list';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const App = React.createClass({
     getInitialState() {
         return {
-            restaurants: List,
+            restaurants: RestaurantList,
             pickedRestaurant: null
         };
     },
@@ -19,26 +22,18 @@ const App = React.createClass({
         })
     },
 
-    renderPickedRestaurant() {
-        const {pickedRestaurant} = this.state;
-        const key = pickedRestaurant ? pickedRestaurant.id : -1;
-        const text = pickedRestaurant ? pickedRestaurant.name : 'No restaurant picked.';
-
-        return <p key={key}>{text}</p>;
-    },
-
     render() {
         return (
             <div className="main">
-                <div className="restaurant">
-                    <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-                        {this.renderPickedRestaurant()}
-                    </ReactCSSTransitionGroup>
-                    <button className="main-button" onClick={this.pickNewRestaurant}>BARREL ROLL!</button>
-                </div>
+                <Result restaurant={this.state.pickedRestaurant}/>
+                <button className="main-button" onClick={this.pickNewRestaurant}>BARREL ROLL!</button>
+                <Filters/>
             </div>
         );
     }
 });
 
+//TODO Connect to the store!
+//TODO Hook up to redux. Send the state after "pick new restaurant"
+//TODO Hook up filters to access written reducers
 export default App;
